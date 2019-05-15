@@ -1,5 +1,6 @@
 package com.tts.PaintCompany.Subscribe;
 
+import javax.script.Invocable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
@@ -24,7 +25,7 @@ public class SubscriberController implements ErrorController{
 	
 	@GetMapping (value= "/")
 	public String index(Subscriber subscriber) {
-		return "index";
+		return "form_test";
 	}
 	
 //	@RequestMapping(value = "/", method = RequestMethod.POST) 
@@ -34,26 +35,30 @@ public class SubscriberController implements ErrorController{
 //	}
 
 	@PostMapping (value = "/")
-	public String addNewSubscriber(Subscriber subscriber, Model model) throws ScriptException {
-		try {
+	public String addNewSubscriber(Subscriber subscriber, Model model) throws ScriptException, NoSuchMethodException {
+		//try {
 			subscriberRepository.save(new Subscriber(subscriber.getFirstName(), subscriber.getLastName(), subscriber.getEmail(), subscriber.getSignedUp()));
 			model.addAttribute("firstName", subscriber.getFirstName());
 			model.addAttribute("lastName", subscriber.getLastName());
 			model.addAttribute("email", subscriber.getEmail());
-			return "index";
-		}
-		catch (Exception e){
-			ScriptEngineManager manager = new ScriptEngineManager();
-		    ScriptEngine engine = manager.getEngineByName("JavaScript");
-		    
-		    String script = (String)"function duplicate() {alert('You have already subscribed!')}";
-		    
-		    engine.eval(script);
-		    
-		    
-		    
-		}
-		return "index";
+			return "form_test";
+		//}
+//		catch (Exception e){
+//			ScriptEngineManager manager = new ScriptEngineManager();
+//		    ScriptEngine engine = manager.getEngineByName("JavaScript");
+//		    
+//		    String script = (String)"function duplicate() {print('You have already subscribed!')}";
+//		    
+//		    engine.eval(script);
+//		    
+//		    Invocable inv = (Invocable) engine;
+//		    
+//		    inv.invokeFunction("duplicate", "Scripting");
+//		    
+//		    
+//		    
+//		}
+		//return "form_test";
 	}
 	
 	private static final String PATH = "/error";
