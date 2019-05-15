@@ -1,5 +1,11 @@
 package com.tts.PaintCompany.Subscribe;
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
@@ -28,13 +34,26 @@ public class SubscriberController implements ErrorController{
 //	}
 
 	@PostMapping (value = "/")
-	public String addNewSubscriber(Subscriber subscriber, Model model) {
-		subscriberRepository.save(new Subscriber(subscriber.getFirstName(), subscriber.getLastName(), subscriber.getEmail(), subscriber.getSignedUp()));
-		model.addAttribute("firstName", subscriber.getFirstName());
-		model.addAttribute("lastName", subscriber.getLastName());
-		model.addAttribute("email", subscriber.getEmail());
+	public String addNewSubscriber(Subscriber subscriber, Model model) throws ScriptException {
+		try {
+			subscriberRepository.save(new Subscriber(subscriber.getFirstName(), subscriber.getLastName(), subscriber.getEmail(), subscriber.getSignedUp()));
+			model.addAttribute("firstName", subscriber.getFirstName());
+			model.addAttribute("lastName", subscriber.getLastName());
+			model.addAttribute("email", subscriber.getEmail());
+			return "index";
+		}
+		catch (Exception e){
+			ScriptEngineManager manager = new ScriptEngineManager();
+		    ScriptEngine engine = manager.getEngineByName("JavaScript");
+		    
+		    String script = (String)"function duplicate() {alert('You have already subscribed!')}";
+		    
+		    engine.eval(script);
+		    
+		    
+		    
+		}
 		return "index";
-				
 	}
 	
 	private static final String PATH = "/error";
