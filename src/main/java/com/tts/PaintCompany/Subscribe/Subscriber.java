@@ -24,15 +24,15 @@ public class Subscriber {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 	
-	@Getter
-	@Setter
-	@NotEmpty(message = "Please enter your first name")
-	private String firstName;
-	
-	@Getter
-	@Setter
-	@NotEmpty(message = "Please enter your last name")
-	private String lastName;
+//	@Getter
+//	@Setter
+//	@NotEmpty(message = "Please enter your first name")
+//	private String firstName;
+//	
+//	@Getter
+//	@Setter
+//	@NotEmpty(message = "Please enter your last name")
+//	private String lastName;
 	
 	@Getter
 	@Setter
@@ -50,16 +50,27 @@ public class Subscriber {
 	public Subscriber() {
 	}
 	
-	public Subscriber(String firstName, String lastName, String email, Date signedUp) {
-		this.firstName = firstName;
-		this.lastName = lastName;
+//	public Subscriber(String firstName, String lastName, String email, Date signedUp) {
+//		this.firstName = firstName;
+//		this.lastName = lastName;
+//		this.email = email;
+//		this.signedUp = signedUp;
+//	  }
+	
+	public Subscriber(String email, Date signedUp) {
 		this.email = email;
 		this.signedUp = signedUp;
 	  }
 	
+//	@Override
+//	public String toString() {
+//		return "Subscriber [id= " + id + ", firstName= " + firstName + ", lastName= " + lastName + ", email= " + email
+//	+ ", signedUp= " + signedUp + "]";
+//	}
+	
 	@Override
 	public String toString() {
-		return "Subscriber [id= " + id + ", firstName= " + firstName + ", lastName= " + lastName + ", userName= " + email
+		return "Subscriber [id= " + id  +  ", email= " + email
 	+ ", signedUp= " + signedUp + "]";
 	}
 

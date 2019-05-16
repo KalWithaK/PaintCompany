@@ -18,14 +18,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
-public class SubscriberController implements ErrorController{
+public class SubscriberController { //implements ErrorController
 	
 	@Autowired
 	private SubscriberRepository subscriberRepository;
 	
 	@GetMapping (value= "/")
 	public String index(Subscriber subscriber) {
-		return "form_test";
+		//return "form_test";
+		return "index";
 	}
 	
 //	@RequestMapping(value = "/", method = RequestMethod.POST) 
@@ -33,15 +34,24 @@ public class SubscriberController implements ErrorController{
 //	    model.addAttribute("subscriber", new Subscriber()); 
 //	    return "index";
 //	}
-
-	@PostMapping (value = "/")
-	public String addNewSubscriber(Subscriber subscriber, Model model) throws ScriptException, NoSuchMethodException {
-		//try {
-			subscriberRepository.save(new Subscriber(subscriber.getFirstName(), subscriber.getLastName(), subscriber.getEmail(), subscriber.getSignedUp()));
-			model.addAttribute("firstName", subscriber.getFirstName());
-			model.addAttribute("lastName", subscriber.getLastName());
-			model.addAttribute("email", subscriber.getEmail());
-			return "form_test";
+//
+//	@PostMapping (value = "/")
+//	public String addNewSubscriber(Subscriber subscriber, Model model) throws ScriptException, NoSuchMethodException {
+//		//try {
+//			subscriberRepository.save(new Subscriber(subscriber.getFirstName(), subscriber.getLastName(), subscriber.getEmail(), subscriber.getSignedUp()));
+//			model.addAttribute("firstName", subscriber.getFirstName());
+//			model.addAttribute("lastName", subscriber.getLastName());
+//			model.addAttribute("email", subscriber.getEmail());
+//			//return "form_test";
+//			return "index";
+			
+			@PostMapping (value = "/")
+			public String addNewSubscriber(Subscriber subscriber, Model model) throws ScriptException, NoSuchMethodException {
+				//try {
+					subscriberRepository.save(new Subscriber(subscriber.getEmail(), subscriber.getSignedUp()));
+					model.addAttribute("email", subscriber.getEmail());
+					//return "form_test";
+					return "index";
 		//}
 //		catch (Exception e){
 //			ScriptEngineManager manager = new ScriptEngineManager();
@@ -61,18 +71,18 @@ public class SubscriberController implements ErrorController{
 		//return "form_test";
 	}
 	
-	private static final String PATH = "/error";
-	
-	@RequestMapping(value = PATH)
-	public String error() {
-		return "Error handling";
-	}
-
-	@Override
-	public String getErrorPath() {
-		// TODO Auto-generated method stub
-		return PATH;
-	}
+//	private static final String PATH = "/error";
+//	
+//	@RequestMapping(value = PATH)
+//	public String error() {
+//		return "Error handling";
+//	}
+//
+//	@Override
+//	public String getErrorPath() {
+//		// TODO Auto-generated method stub
+//		return PATH;
+//	}
 
 
 }

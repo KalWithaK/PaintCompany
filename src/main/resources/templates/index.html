@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -510,9 +510,9 @@
 						<div class="content">
 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Consectetuer adipiscing elit, dolore magna aliquam erat volutpat. </p>
 							<div class="subcribe-form" >
-								<form method="get" action="/search" id="subcribe">
+								<form id="subscribe" action="#" th:action="@{/}" th:object="${subscriber}" method="post">
 									<div class="form-group">
-										<input type="text" class="form-control input-lg" name="subcribe" placeholder="Enter your email address...  " required="required" />
+										<input id="email" type="text" class="form-control input-lg" name="subcribe" placeholder="Enter your email address...  " required="required" th:field="*{email}" />
 									</div>
 									<button type="submit" name="Submit" class="btn btn-4 f-left">Subcribe</button>
 								</form>
@@ -605,6 +605,55 @@
 	<script src="/js/jquery.easing.min.js"></script>
 	<script src="/js/classie.js"></script>
 	<script src="/js/cbpAnimatedHeader.js"></script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
+<script type="text/javascript">
+	
+		$(document).ready(function(){
+			debugger
+			$('#subscribe').submit(function(e) {
+			console.log("in submit");
+			e.preventDefault();
+			sendData();
+			console.log("return false");
+			return false;
+			});
+		});
+
+		$(document).ready(function clear(){
+			//$('#firstName').val('');
+			//$('#lastName').val('');
+			$('#email').val('');
+		})
+
+		clear();
+
+		
+
+		function sendData(){
+			var formData = new FormData();
+			formData.set('email', $('#email').val());
+			//formData.set('firstName', $('#firsName').val());
+			//formData.set('lastName', $('#lastName').val());
+
+			axios({
+			method: 'post',
+			url: 'http://localhost:8080/',
+			data: formData,
+			config: { headers: {'Content-Type': 'multipart/form-data' }}
+		})
+		.then(function (response){
+			if(!alert('Thank you for Subscribing')){window.location.reload()};
+		})
+		 .catch(function (response) {
+			if(!alert('You have already subscribed!')){window.location.reload()};
+		}) 
+
+		}
+			
+</script>
+	
 </body>
 </html>
