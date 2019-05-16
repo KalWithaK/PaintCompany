@@ -36,8 +36,8 @@ public class Subscriber {
 	
 	@Getter
 	@Setter
-	@NotEmpty(message = "Please enter your email address")
-	@Email(message = "Please enter a valid email address")
+	//@NotEmpty(message = "Please enter your email address")
+	//@Email(message = "Please enter a valid email address")
 	// @Column(unique = true)
 	private String email;
 		

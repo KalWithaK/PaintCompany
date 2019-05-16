@@ -526,7 +526,7 @@ Calendly inline widget end -->
 							<div class="subcribe-form" >
 								<form id="subscribe" action="#" th:action="@{/}" th:object="${subscriber}" method="post">
 									<div class="form-group">
-										<input id="email" type="text" class="form-control input-lg" name="subcribe" placeholder="Enter your email address...  " required="required" th:field="*{email}" />
+										<input id="email" th:field="*{email}" type="text" class="form-control input-lg" name="subcribe" placeholder="Enter your email address...  "/>
 									</div>
 									<button type="submit" name="Submit" class="btn btn-4 f-left">Subcribe</button>
 								</form>
@@ -629,7 +629,6 @@ Calendly inline widget end -->
 <script type="text/javascript">
 	
 		$(document).ready(function(){
-			debugger
 			$('#subscribe').submit(function(e) {
 			console.log("in submit");
 			e.preventDefault();
@@ -639,13 +638,13 @@ Calendly inline widget end -->
 			});
 		});
 
-		$(document).ready(function clear(){
+		/* $(document).ready(function clear(){
 			//$('#firstName').val('');
 			//$('#lastName').val('');
 			$('#email').val('');
 		})
 
-		clear();
+		clear(); */
 
 		
 
