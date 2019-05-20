@@ -523,12 +523,12 @@ Calendly inline widget end -->
 						<div class="heading"><h4>Your Email</h4></div>
 						<div class="content">
 							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Consectetuer adipiscing elit, dolore magna aliquam erat volutpat. </p>
-							<div class="subcribe-form" >
-								<form id="subscribe" action="#" th:action="@{/}" th:object="${subscriber}" method="post">
+							<div class="subscribe-form" >
+								<form id="subscribe" th:action="@{/}" th:object="${subscriber}" method="post">
 									<div class="form-group">
-										<input id="email" th:field="*{email}" type="text" class="form-control input-lg" name="subcribe" placeholder="Enter your email address...  "/>
+										<input id="subscribeEmail" th:field="*{email}" type="text" class="form-control input-lg" name="subscribe" placeholder="Enter your email address...  "/>
 									</div>
-									<button type="submit" name="Submit" class="btn btn-4 f-left">Subcribe</button>
+									<button type="submit" name="Submit" class="btn btn-4 f-left">Subscribe</button>
 								</form>
 							</div>
 						</div>
@@ -624,19 +624,11 @@ Calendly inline widget end -->
 	<script src="/js/cbpAnimatedHeader.js"></script>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
 <script type="text/javascript">
 	
-		$(document).ready(function(){
-			$('#subscribe').submit(function(e) {
-			console.log("in submit");
-			e.preventDefault();
-			sendData();
-			console.log("return false");
-			return false;
-			});
-		});
+		
 
 		/* $(document).ready(function clear(){
 			//$('#firstName').val('');
@@ -648,12 +640,11 @@ Calendly inline widget end -->
 
 		
 
-		function sendData(){
+		  function sendData(){
 			var formData = new FormData();
-			formData.set('email', $('#email').val());
-			//formData.set('firstName', $('#firsName').val());
-			//formData.set('lastName', $('#lastName').val());
-
+			formData.set('email', $('#subscribeEmail').val());
+			// axios.post('http://localhost:8080/',formData.formAddAsset)
+			
 			axios({
 			method: 'post',
 			url: 'http://localhost:8080/',
@@ -668,6 +659,16 @@ Calendly inline widget end -->
 		}) 
 
 		}
+		
+		$(document).ready(function(){
+			$('#subscribe').submit(function(e) {
+			console.log("in submit");
+			e.preventDefault();
+			sendData();
+			console.log("return false");
+			return false;
+			});
+		});
 			
 </script>
 	
