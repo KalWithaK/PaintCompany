@@ -20,7 +20,7 @@ public class SubscriberController {
 	}
 			
 			@PostMapping (value = "/")
-			public String addNewSubscriber(Subscriber subscriber, Model model) {   //throws ScriptException, NoSuchMethodException {
+			public String addNewSubscriber(Subscriber subscriber, Model model) {
 				
 					subscriberRepository.save(new Subscriber(subscriber.getEmail(), subscriber.getSignedUp()));
 					model.addAttribute("email", subscriber.getEmail());			

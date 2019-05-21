@@ -526,7 +526,7 @@ Calendly inline widget end -->
 							<div class="subscribe-form" >
 								<form id="subscribe" th:action="@{/}" th:object="${subscriber}" method="post">
 									<div class="form-group">
-										<input id="subscribeEmail" th:field="*{email}" type="text" class="form-control input-lg" name="subscribe" placeholder="Enter your email address...  "/>
+										<input id="subscriberEmail" th:field="*{email}" type="text" class="form-control input-lg" name="subscribe" placeholder="Enter your email address...  "/>
 									</div>
 									<button type="submit" name="Submit" class="btn btn-4 f-left">Subscribe</button>
 								</form>
@@ -630,20 +630,9 @@ Calendly inline widget end -->
 	
 		
 
-		/* $(document).ready(function clear(){
-			//$('#firstName').val('');
-			//$('#lastName').val('');
-			$('#email').val('');
-		})
-
-		clear(); */
-
-		
-
 		  function sendData(){
 			var formData = new FormData();
-			formData.set('email', $('#subscribeEmail').val());
-			// axios.post('http://localhost:8080/',formData.formAddAsset)
+			formData.set('email', $('#subscriberEmail').val());
 			
 			axios({
 			method: 'post',
