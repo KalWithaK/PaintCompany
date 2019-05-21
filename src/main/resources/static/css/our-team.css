@@ -22,7 +22,7 @@
   }
 }
 .cd-testimonials {
-  color: #ffffff;
+  color: black;
   text-align: center;
 }
 .cd-testimonials::after {
@@ -49,6 +49,7 @@
   .cd-testimonials p {
     font-size: 22px;
     font-size: 1.375rem;
+    font-color: black;
   }
 }
 @media only screen and (min-width: 1170px) {
