@@ -1,3 +1,0 @@
-# PaintCompany
-# PaintCompany
-# TechTalentTwitter
