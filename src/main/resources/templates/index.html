@@ -14,10 +14,13 @@
 
 	<!-- Custom CSS -->
 	
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 	<link rel="stylesheet" href="/css/reset.css"> <!-- CSS reset -->
-    <link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/animated-logo.min.css"><!-- Logo -->
 	<link rel="stylesheet" href="/css/our-team.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="/css/animate.css">
+	<link rel="stylesheet" href="/css/style.css">
+	
 	
 	<!-- Custom Fonts -->
     <link href="/fonts/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -96,8 +99,8 @@
 						</div>
 					</div>
 					<div class="intro-text">
-						<div class="intro-lead-in">Welcome to JNL Painting!</div>
-						<div class="intro-heading">A Fresh Coat For a Fresh Start</div>
+						<div class="animated rotateInUpLeft delay-1s intro-lead-in">Welcome to JNL Painting!</div>
+						<div class="intro-heading animated rotateInDownRight delay-2s">A Fresh Coat For a Fresh Start</div>
 					</div>
 					<a class="btn btn-1 btn-sm" href="#about">About Us</a>
 					<a class="btn btn-1 btn-sm" href="#team">Our Team</a>
@@ -112,7 +115,7 @@
 		
 		<!-- ////////////Content Box 01 -->
 		<section id="services" class="box-content box-1">
-			<div class="container">
+			<div data-aos="zoom-out-down" data-aos-duration="3000" class="container">
 				<div class="row heading">
 					<div class="col-lg-12">
 						<h2>Services</h2>
@@ -121,46 +124,42 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-sm-3 box-item">
+					<div class="col-sm-3 box-item box-size">
 						<div class="wrap-img">
 							<img src="https://img.icons8.com/ios/64/000000/paint-brush-filled.png">
 						</div>
 						<h3 class="blue">Interior House Painting</h3>
 						<p>Bathrooms, kitchens, cabinets, dining rooms, living rooms, 
 						shelving, ceilings, game rooms, pantries, hallways, bedrooms, garages and more</p>
-						<button type="submit" class="btn btn-2 ">More</button>
-					</div>
-					<div class="col-sm-3 box-item">
+					</div>					
+					<div class="col-sm-3 box-item box-size">
 						<div class="wrap-img">
 							<img src="https://img.icons8.com/color/64/000000/cottage.png">
 						</div>
 						<h3 class="yellow">Exterior House Painting</h3>
 						<p>Homes, garages, outbuildings and sheds, barns, 
 						playhouses, doors, shutters, trim and more</p>
-						<button type="submit" class="btn btn-2 ">More</button>
+					
 					</div>
-					<div class="col-sm-3 box-item">
+					<div class="col-sm-3 box-item box-size">
 						<div class="wrap-img">
 							<img src="https://img.icons8.com/color/64/000000/paint-bucket.png">
 						</div>
 						<h3 class="red">Staining</h3>
 						<p>Decks, furniture, anything!</p>
-						<button type="submit" class="btn btn-2 ">More</button>
 					</div>
-					<div class="col-sm-3 box-item">
+					<div class="col-sm-3 box-item box-size">
 						<div class="wrap-img">
 							<img src="https://img.icons8.com/ios/64/000000/roller-brush-filled.png">
 						</div>
 						<h3 class="green">Pressure Washing</h3>
-						<p>High quality pressure washer to get rid of your dirt problems!</p>
-						<button type="submit" class="btn btn-2 ">More</button>
-					</div>
+						<p>High quality pressure washer to get rid of your dirt problems!</p>					</div>
 				</div>		
 			</div>
 		</section>
 		
 		<!-- ////////////Content Box 02 -->
-		<section id="new" class="box-content box-2 box-style">
+		<section id="new" data-aos="zoom-in-up" data-aos-duration="2000" class="box-content box-2 box-style">
 			<div class="container">
 				<div class="row">
 					<blockquote>A world of new color that will transform yours.</blockquote>
@@ -168,17 +167,26 @@
 			</div>
 		</section>
 		
-<!-- 		 ////////////Content Box 03
+	<!--  ////////////Content Box 03 -->
 		<section id="about" class="box-content box-3">
 			<div class="container">
 				<div class="row heading">
 					<div class="col-lg-12">
-						<h2>About</h2>
+						<h2 data-aos="flip-left" data-aos-duration="2000">About Us</h2>
 						<hr>
-						<div class="intro">Lorem ipsum dolor sit amet</div>
+						<img data-aos="flip-left" data-aos-duration="2000" class="img-circle img-center" src="images/4.jpg" alt="">
+						<div data-aos="flip-left" data-aos-duration="2000"  class="intro intro-top">Started in 2013, Lorem ipsum dolor, sit amet consectetur 
+							adipisicing elit. Sint saepe pariatur molestias nemo, obcaecati sequi quaerat? 
+							Ducimus ab repudiandae, cumque distinctio soluta velit corporis quas libero, eius 
+							eaque impedit fuga. ipsum dolor, sit amet consectetur adipisicing elit. Pariatur in 
+							dit rerum laudantium voluptas, libero laboriosam ipsum, aliquam ipsa dolor aperiam 
+							explicabo exercitationem, nihil possimus quaerat optio unde. Omnis, delectus!</div>
 					</div>
 				</div>
-				<div class="row">
+				</div>
+				</section>
+	
+		<!-- 			<div class="row">
 					<div class="col-lg-12">
 						<ul class="timeline">
 							<li class="blue">
@@ -495,6 +503,7 @@
 		</section>
 		
 	</div>
+</div>
 	
 <!-- 			<!-- Calendly inline widget begin
 <div class="calendly-inline-widget" data-url="https://calendly.com/jnlpaint/freeestimate" style="min-width:320px;height:580px;"></div>
@@ -611,6 +620,8 @@ Calendly inline widget end -->
 	<script src="/js/masonry.pkgd.min.js"></script>
 	<script src="/js/jquery.flexslider-min.js"></script>
 	<script src="/js/main.js"></script> <!-- Resource jQuery -->
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	
 
 	<!-- Bootstrap Core JavaScript -->
 	<script src="/js/bootstrap.min.js"></script>
@@ -622,6 +633,9 @@ Calendly inline widget end -->
 	<script src="/js/jquery.easing.min.js"></script>
 	<script src="/js/classie.js"></script>
 	<script src="/js/cbpAnimatedHeader.js"></script>
+	<script>
+  		AOS.init();
+	</script>
 
 </body>
 </html>
