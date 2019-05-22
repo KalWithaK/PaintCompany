@@ -339,7 +339,7 @@ footer .copyright p, footer .copyright ul{margin: 20px 0;}
 }
 a.btn:focus{outline: 0;}
 
-.btn-1 {color: #fff;background-color: transparent;border: 2px solid #fff;margin:0 15px 20px 0;min-width: 170px;line-height: 26px;}
+.btn-1 {color: black;background-color: transparent;border: 2px solid #fff;margin:0 15px 20px 0;min-width: 170px;line-height: 26px;}
 .btn-1:hover {color: #000;background-color: #fff;border-color: #fff;}
 
 .btn-2 {background: #333;border: 2px solid transparent;margin:20px 0 50px 0; color:#fff;}
@@ -350,3 +350,14 @@ a.btn:focus{outline: 0;}
 
 .btn-4 {background: #555;border: 2px solid transparent;font-size:18px;}
 .btn-4:hover {color:#aaa;border:2px solid #555;background:transparent;text-shadow: none;}
+
+.img-center {
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.intro-top {
+	margin-top:20px;
+}
+
+
