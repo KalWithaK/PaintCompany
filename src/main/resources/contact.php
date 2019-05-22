@@ -9,7 +9,7 @@ if(isset($_POST['name']))
 	$email=$_POST['email'];
 	$message=$_POST['message'];
 
-	$to = "youremail@gmail.com";
+	$to = "jordanmentzuber@gmail.com";
 	$subject = "Zerotheme - Testing Contact Form";
 	$message = " Name: " . $name ."\r\n Email: " . $email . "\r\n Message:\r\n" . $message;
 	 

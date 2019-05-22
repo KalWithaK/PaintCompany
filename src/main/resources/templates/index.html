@@ -15,12 +15,11 @@
 	<!-- Custom CSS -->
 	
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/animate.css">
+	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/reset.css"> <!-- CSS reset -->
 	<link rel="stylesheet" href="/css/animated-logo.min.css"><!-- Logo -->
 	<link rel="stylesheet" href="/css/our-team.css"> <!-- Resource style -->
-	<link rel="stylesheet" href="/css/animate.css">
-	<link rel="stylesheet" href="/css/style.css">
-	
 	
 	<!-- Custom Fonts -->
     <link href="/fonts/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -57,25 +56,23 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                    <a class="page-scroll">Call us TODAY! 704-576-9807</a>
+                    <a>Call us TODAY! 704-576-9807</a>
                     </li>
 					<li>
-                        <a class="page-scroll" href="#page-top">Home</a>
+                        <a href="#page-top">Home</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#services">Services</a>
+                        <a href="#services">Services</a>
+                    </li>
+					
+                    <li>
+                        <a href="#about">About</a>
                     </li>
 					<li>
-                        <a class="page-scroll" href="#new">New</a>
+                        <a href="#team">Team</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
-                    </li>
-					<li>
-                        <a class="page-scroll" href="#team">Team</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -115,7 +112,7 @@
 		
 		<!-- ////////////Content Box 01 -->
 		<section id="services" class="box-content box-1">
-			<div data-aos="zoom-out-down" data-aos-duration="3000" class="container">
+ 			<div data-aos="zoom-out-down" data-aos-duration="3000" class="container">
 				<div class="row heading">
 					<div class="col-lg-12">
 						<h2>Services</h2>
@@ -466,6 +463,7 @@
 					<div class="col-md-8">
 						<div id="contact-form">
 							<form name="form1" method="post" action="contact.php">
+							<?php include 'contact.php';?>
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
@@ -503,7 +501,7 @@
 		</section>
 		
 	</div>
-</div>
+
 	
 <!-- 			Calendly inline widget begin
 <div class="calendly-inline-widget" data-url="https://calendly.com/jnlpaint/freeestimate" style="min-width:320px;height:580px;"></div>
@@ -531,7 +529,7 @@ Calendly inline widget end -->
 					<div class="col-md-4 col-footer footer-2">
 						<div class="heading"><h4>Your Email</h4></div>
 						<div class="content">
-							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Consectetuer adipiscing elit, dolore magna aliquam erat volutpat. </p>
+							<p>Subscribe to our newsletter today to get special offers and exclusive deals! </p>
 							<div class="subcribe-form" >
 								<form id="subscribe" action="#" th:action="@{/}" th:object="${subscriber}" method="post">
 									<div class="form-group">
