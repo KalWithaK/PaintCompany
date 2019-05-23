@@ -107,7 +107,7 @@ hr:after {content: url(../images/dots.png);display: inline-block;position: relat
     }
 }
 header{text-align: center;color: #000;background: url(../images/painters.jpg) no-repeat scroll center center ;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;height: 650px;}	
-header img{display: block; margin: 200px auto  50px auto;}
+header img{display: block; margin: 150px auto  10px auto;}
 header .intro-text .intro-heading {text-transform: uppercase;font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;font-weight: 700;font-size: 50px;}
 header .intro-text .intro-lead-in {margin-bottom: 30px;font-family: 'Shadows Into Light', cursive;font-style: italic;font-size: 42px;}
 @media(min-width:635px) {
